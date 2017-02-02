@@ -39,8 +39,8 @@ var Note = React.createClass({
             <div className="note">
                 <p>{this.props.children}</p>
                 <span>
-                    <button className="btn btn-primary" onClick={this.edit}>ED</button>
-                    <button className="btn btn-primary" onClick={this.remove}>RM</button>
+                    <button className="btn btn-primary btn-block" onClick={this.edit}>ED</button>
+                    <button className="btn btn-primary btn-block" onClick={this.remove}>RM</button>
                 </span>
             </div>
         )
@@ -76,7 +76,7 @@ var Board = React.createClass({
     },
     eachNote: function (note, i) {
         return (
-            <Note key={i} onRemove={this.removeHandle} onChange = {this.saveHandle} index={i} >{note}</Note>
+            <Note className = "jumbotron text-center" key={i} onRemove={this.removeHandle} onChange = {this.saveHandle} index={i} >{note}</Note>
         )
     },
     add:function(text){
@@ -90,7 +90,7 @@ var Board = React.createClass({
         return (
             <div className="board">
                 {this.state.notes.map(this.eachNote)}
-                <button className = "btn btn-success" onClick = {this.add.bind(null, "New Note")}>+</button>
+                <button className = "btn btn-success btn-block" onClick = {this.add.bind(null, "New Note")}>+</button>
             </div>
         )
     }
